@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omega Speedmaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-…hash…" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"> 
+    <style>
+        .navbar {
+            padding: 0.5rem 0;
+            background-color: #284b63 !important;
+            transition: all 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-scrolled {
+            padding: 0.2rem 0;
+            background-color: rgba(109, 70, 107, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled .navbar-brand img {
+            height: 45px;
+        }
+        
+        /* Navbar menü öğeleri */
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 10px 15px !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        
+        
+        .navbar-buttons .btn {
+            margin: 0 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+        .fs-xl {
+        font-size: 3rem; /* 48px */
+        }
+        .main-content {
+        margin-top: 80px; /* Navbar yüksekliği kadar boşluk bırakır */
+        }
+
+        .fs-xxl {
+        font-size: 4rem; /* 64px */
+        }
+        .fs-xxxl {
+        font-size: 5rem; /* 64px */
+        }
+        .no-gap {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        #special-img {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+
+        #special-img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-img-top:hover {
+            transform: scale(1.02);
+            transition: transform 0.5s;
+        }
+        .card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+            }
+
+            .card:nth-child(1) { animation-delay: 0.3s; }
+            .card:nth-child(2) { animation-delay: 0.4s; }
+            .card:nth-child(3) { animation-delay: 0.6s; }
+        #special-img {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+
+        #special-img:hover {
+            transform: scale(1.20);
+        }
+        .fw-bold.fs-xxxl {
+            font-size: 5rem; /* varsayılan büyük ekran */
+        }
+
+        /* Büyük ekranlar için örnek */
+        @media (max-width: 1200px) {
+            .fw-bold.fs-xxxl {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .fw-bold.fs-xxxl {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fw-bold.fs-xxxl {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fw-bold.fs-xxxl {
+                font-size: 2rem;
+                padding: 1rem;
+                word-wrap: break-word; /* Uzun metinleri satır içinde kır */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img class="img-fluid" src="img/horologewhite.svg" alt="Horologe Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Ana Sayfa</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" data-bs-toggle="dropdown">Markalar</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#rolex">Rolex</a></li>
+                            <li><a class="dropdown-item" href="#omega">Omega</a></li>
+                            <li><a class="dropdown-item" href="#seiko">Seiko</a></li>
+                            <li><a class="dropdown-item" href="#blancpain">Blancpain</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#collections">Koleksiyonlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid moon-surface" style="margin-top: 76px; background:
+        radial-gradient(circle at 25% 30%, rgba(255,255,255,0.08) 0%, transparent 25%),
+        radial-gradient(circle at 70% 65%, rgba(255,255,255,0.05) 0%, transparent 20%),
+        linear-gradient(90deg, #2c2d30 0%, #5a5c60 50%, #2c2d30 100%),
+        repeating-radial-gradient(circle, rgba(255,255,255,0.015) 1px, transparent 2px);
+        background-size: auto, auto, auto, 3px 3px;">
+
+        <div class="fw-bold fs-xxxl text-center p-3 mb-5 text-light"> Omega Speedmaster Moonwatch </div>
+
+        <div class="container-fluid shadow rounded-4" style="background-color:black;">
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-xl-2 g-5">
+                    <div class="col text-center" id="special-img">
+                        <img class="img-fluid" src="img/PageItems/omegaspeedmaster.png" alt="Omega Speedmaster görseli">
+                        
+                    </div>
+
+                    <div class="col align-self-center text-light">
+                    <h1>Omega Speedmaster Moonwatch: Uzayın Efsanevi Zamanlayıcısı</h1>
+                        <p>Omega Speedmaster Moonwatch, saatçilik tarihinin en prestijli ve anlamlı modellerinden biridir. 1957 yılında motorsporları için tasarlanan bu efsanevi kronograf, zamanla uzay keşiflerinin vazgeçilmez partneri haline geldi. NASA'nın titiz testlerinden geçen Speedmaster, astronotların bilek saatlerinde güvenilir bir zaman ölçer olarak yerini aldı. Bu saat, sadece zamanı göstermekle kalmayıp, kritik uzay görevlerinde hayati önem taşıyan hesaplamaların yapılmasını sağlayan bir araç haline geldi. Omega, bu başarıyla saatçilik endüstrisinde benzersiz bir konum elde etti ve "Moon Watch" unvanını hak eden tek marka oldu.</p>
+                    <h2>Mükemmel Mühendislik: Kalibre 321 ve Tasarım İnovasyonu</h2>
+                        <p>Speedmaster'ın kalbinde yer alan orijinal Kalibre 321, dönemin en gelişmiş kronograf hareketlerinden biriydi. Bu hareket, uzayın zorlu koşullarında bile kusursuz çalışacak şekilde tasarlanmış, aşırı sıcaklık değişimlerinde, titreşimlerde ve vakum ortamında dahi güvenilirliğini kanıtlamıştı. Saatin 42mm çapındaki paslanmaz çelik kasası, siyah tachymeter ölçekli çerçevesi ve üç alt kadranından oluşan düzeni, kronograf saatlerinin klasik estetiğini belirledi. Hesalite kristal cam ve simetrik kasa tasarımı, Speedmaster'a zamansız bir görünüm kazandırdı.</p>
+                        <p>Saatin en dikkat çekici özelliklerinden biri, "Dot over 90" tachymeter ölçeği ve "stepped dial" tasarımıydı. Bu detaylar, sadece estetik değil, aynı zamanda fonksiyonel amaçlar taşıyordu. Luminous malzemeler, düşük ışık koşullarında okunabilirliği artırırken, pusherlerin ergonomik tasarımı eldiven takılı haldeyken bile kullanım kolaylığı sağlıyordu. Speedmaster'ın mekanik güvenilirliği, elektronik sistemlerin arıza yapabileceği uzay ortamında kritik bir avantaj sunuyordu.</p>
+                    
+                        
+                    </div><!--*yazı column end -->
+
+                </div><!-- *row1 end -->
+                <div class="row row-cols-1 row-cols-xl-2 g-5 border-top my-4">
+                    <div class="col text-center" id="special-img">
+                        <img class="mb-4 rounded-3 img-fluid" src="img/PageItems/buzzwithspeedmaster.png" alt="Buzz Aldrin kolunda speedmaster takıyor">
+                        <img class="mb-4 rounded-3 img-fluid" src="img/PageItems/buzzonmoon.png" alt="Buzz Aldrin ay yüzeyinde speedmaster ile">
+                        
+                    </div>
+
+                    <div class="col align-self-center text-light">
+                    <h2>Apollo Görevleri ve Uzay Tarihindeki Yeri</h2>
+                        <p>Speedmaster'ın en büyük şöhreti, Apollo görevlerindeki performansından gelir. NASA'nın 1965'te yaptığı kapsamlı testlerde, çeşitli saat markalarından sadece Omega Speedmaster geçti ve resmi olarak "tüm insanlı uzay görevleri için onaylandı." Bu onay, saatin uzay tarihindeki eşsiz konumunu belirledi. Apollo 11 görevinde Neil Armstrong ve Buzz Aldrin'in bileklerinde Speedmaster bulunması, saati "ilk ay saati" unvanının sahibi yaptı.</p>
+                        <p>En dramatik anlardan biri Apollo 13 görevinde yaşandı. Uzay aracındaki elektronik sistemler arıza yaptığında, astronotlar kritik motor yakma işlemlerini Speedmaster'ların kronograf özelliğini kullanarak zamanlayarak Dünya'ya güvenli dönüş sağladılar. Bu olay, Speedmaster'ın sadece prestijli bir aksesuar değil, gerçekten hayat kurtaran bir araç olduğunu kanıtladı. Bu kritik durumda, saatin kronograf fonksiyonu olmadan astronotların manuel hesaplamaları yapması imkansız olurdu. Speedmaster'ın hassas mekanik hareketi, elektronik sistemlerin çöktüğü bu dramatik anında tek güvenilir zaman kaynağı olarak hizmet verdi.</p>
+                        <p>Apollo 11 görevinden döndükten sonra astronotlar, NASA'nın organizasyonuyla 45 günlük bir dünya turu gerçekleştirdiler. Bu özel turun kapsamında 24 ülkeyi ziyaret eden Neil Armstrong, Buzz Aldrin ve Michael Collins, uzay başarısını tüm dünyayla paylaştılar. Bu turun en anlamlı duraklarından biri de Türkiye oldu. 20 Ekim 1969 tarihinde Ankara'ya gelen astronotlar, Anıtkabir'i ziyaret ederek Mustafa Kemal Atatürk'e saygılarını sundular. Bu ziyaret, modern bilime ve teknolojiye verilen önemin yanı sıra, Atatürk'ün çağdaşlaşma vizyonunun uluslararası arenada nasıl saygı gördüğünün de bir göstergesiydi.</p>
+                        <p>
+                            Buzz Aldrin'in ay yüzeyinde çekilen fotoğraflarında bileğinde net şekilde görülen Speedmaster, insanlığın en büyük başarılarından birinin tanıklığını etti. Armstrong'un saati Ay Modülü'nde yedek ekipman olarak bırakılırken, Aldrin'in Speedmaster'ı tarihi ay yürüyüşünde onunla birlikte bulundu. Bu görüntüler, saati sadece bir zaman ölçer olmaktan çıkarıp, insani cesaretin ve bilimsel başarının sembolü haline getirdi. Apollo programının ardından Speedmaster, uzay görevlerindeki rolü nedeniyle koleksiyoncular arasında efsanevi bir statü kazandı ve "Moonwatch" unvanıyla anılmaya başlandı. Bu nedenle saat, uzay meraklıları ve koleksiyoncuları için sadece bir zaman ölçer değil, insanlık tarihinin önemli bir parçasıdır.
+                        </p>
+                    
+                        
+                    </div><!--*yazı column end -->
+
+                </div><!-- *row1 end -->
+                
+                <div class="container my-4 border-top border-1">
+                    <h2 class="text-light text-center mt-4">BIOCERAMIC MOONSWATCH KOLEKSİYONU</h2>
+                    <p class="text-light text-center">Merkezindeki dev yıldızdan en uzak gezegenlerine kadar güneş sisteminin büyüleyici çeşitliliğinden ilham alan Bioceramic MoonSwatch Koleksiyonu, saatçilik dünyasında benzersiz bir yaklaşımı temsil ediyor. Her bir model, farklı gök cisimlerinin karakteristik renklerini yansıtarak uzayın sonsuz güzelliğini bilekte taşıma fırsatı sunuyor.</p>
+                    <p class="text-light text-center">Bu koleksiyon, efsanevi Omega Speedmaster Moonwatch'ın ikonik özelliklerini modern Bioceramic malzemeyle buluşturarak hem nostaljik hem çağdaş bir estetik yaratıyor. Mission to the Sun'ın ateşli sarısından Mission to Neptune'ün derin mavisine, her model insanlığın uzay keşfi tutkusunun somut ifadesi olarak taşıyıcısını günlük bir uzay yolculuğuna çıkarıyor.</p>
+                </div>
+                <!-- ! Card Başlangıç -->
+                <div class="row row-cols-1 row-cols-lg-3 g-5" d-flex align-items-baseline">
+             <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Moon.png" alt="logo" class="card-img-top shadow rounded-5">
+                   <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to the Moon</u></h3>
+                        <p class="card-text">Orijinal Omega Speedmaster Moonwatch'a en sadık model. Siyah kasa ve gri kadranıyla ay misyonlarının ruhunu yaşatıyor. Gerçek "Moonwatch" deneyiminin erişilebilir versiyonu.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+
+            </div><!-- * col end -->
+
+            <div class="col">
+               <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Neptune.png" alt="logo" class="card-img-top shadow rounded-5 ">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Neptune</u></h3>
+                        <p class="card-text">En uzak gezegen Neptune'ün derin mavi renklerini yansıtan koyu mavi tonları. Güneş sisteminin sınırlarındaki gizemli güzelliği keşfedin.</p>
+                        <div class="row">
+                            <div class="col-7 mt-4">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5 mt-4">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+                
+
+            </div><!-- * col end -->
+
+            <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Saturn.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Saturn</u></h3>
+                        <p class="card-text">Halkalı gezegenin bej tonlarında şık bir tasarım. Saat 6 konumunda Satürn'ün ikonik halkalarının görsel temsili yer alıyor. Zarif ve ayırt edici.</p>
+                        <div class="row">
+                            <div class="col-7 mt-4">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5 mt-4">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+            </div><!-- * col end -->
+        </div><!-- *row end -->
+        <!-- ! Card yeni satır başlangıcı -->
+         <div class="row row-cols-1 row-cols-lg-3 g-5" d-flex align-items-baseline">
+             <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Earth.png" alt="logo" class="card-img-top shadow rounded-5">
+                   <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Earth</u></h3>
+                        <p class="card-text">Mavi gezegenimizin okyanuslarından esinlenen mavi ve yeşil tonları. Dünya'nın doğal güzelliklerini bilekta taşıyan bu model, evimizi her dakika hatırlatıyor.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+
+            </div><!-- * col end -->
+
+            <div class="col">
+               <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Jupiter.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Jupiter</u></h3>
+                        <p class="card-text">Güneş sisteminin devi Jupiter'in büyüklüğüne yakışır kahverengi ve turuncu tonları. Gezegen kralının atmosfer renklerini zarif bir tasarımla sunuyor.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+                
+
+            </div><!-- * col end -->
+
+            <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Pluto.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Pluto</u></h3>
+                        <p class="card-text">Eski dokuzuncu gezegen Pluto'nun küçük ama güçlü karakterini temsil eden bordo tonları. Uzayın derinliklerindeki bu küçük dünyanın büyüsünü yaşayın.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+            </div><!-- * col end -->
+        </div><!-- *row end -->
+        <!-- ! Card yeni satır başlangıcı -->
+         <div class="row row-cols-1 row-cols-lg-3 g-5" d-flex align-items-baseline">
+             <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Venus.png" alt="logo" class="card-img-top shadow rounded-5">
+                   <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Venus</u></h3>
+                        <p class="card-text">Aşk gezegeni Venus'ün pudra pembe tonlarını taşıyan romantik tasarım. Oval alt kadranlarla tamamlanan bu zarif model, güzelliği zamanla buluşturuyor.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div><!-- * col end -->
+
+            <div class="col">
+               <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Uranus.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Uranus</u></h3>
+                        <p class="card-text">Buz devi Uranus'ün soğuk mavisi ve yeşilinden ilham alan benzersiz renk paleti. Gezegen sisteminin gizemli güzelliğini bilekte yaşatıyor.</p>
+                        <div class="row">
+                            <div class="col-7 mt-4">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5 mt-4">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+                
+
+            </div><!-- * col end -->
+
+            <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Mercury.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Mercury</u></h3>
+                        <p class="card-text">En küçük gezegenin minimalist güzelliğinden ilham alan koyu gri tonları. Mercury'nin hızlı yörüngesini simgeleyen şık tasarımı, zamanın değerini anlayanlara hitap ediyor.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+
+            </div><!-- * col end -->
+        </div><!-- *row end -->
+
+        <!-- ! Card yeni satır başlangıcı -->
+         <div class="row row-cols-1 row-cols-lg-3 g-5 justify-content-center align-items-baseline">
+
+             <div class="col">
+                <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Sun.png" alt="logo" class="card-img-top shadow rounded-5">
+                   <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to the Sun</u></h3>
+                        <p class="card-text">Parlak sarı Bioceramic kasa ve güneş fırçalı kadranıyla güneş sistemimizin merkezi yıldızının enerjisini yansıtıyor. Beyaz Velcro kayış ve kırmızı detaylarla tamamlanan bu model, günün her anında ışık saçar.</p>
+                        <div class="row">
+                            <div class="col-7">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div><!-- * col end -->
+        
+
+            <div class="col">
+               <div class="card h-100 card-image-top card-equal-high my-5 border-0 bg-transparent text-light">
+                    <img src="img/Cardphotos/Mars.png" alt="logo" class="card-img-top shadow rounded-5">
+                    <div class="card-body">
+                        <h3 class="card-tittle text-center"><u>Mission to Mars</u></h3>
+                        <p class="card-text">Kızıl gezegen Mars'ın toprak renklerinden ilham alan turuncu-kırmızı tonları. Gelecekteki Mars keşiflerinin rüyasını bugünden bilekte taşıyor.</p>
+                        
+                        <div class="row">
+                            <div class="col-7 mt-5">
+                                <h6 class="">Çalışma Tipi</h6>
+                            </div>
+                            <div class="col-5 mt-5">
+                                <h6 class="text-end me-2">Quartz</h6>
+                            </div>
+                        </div>
+                         
+                    </div>
+                </div>
+                
+
+            </div><!-- * col end -->
+         </div><!-- *Row end -->
+
+            </div><!-- *container end -->
+        </div>
+        <br>
+    </div>
+     <footer class="text-light py-3" style="background-color: #284b63;">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <span>&copy; 2025 Horologe Tüm Hakları Saklıdır.</span>
+            <div class="mt-2 mt-md-0">
+                <a href="#" class="text-light text-decoration-none me-3">İletişim</a>
+                <a href="#" class="text-light text-decoration-none me-3">Kullanım Şartları</a>
+                <a href="#" class="text-light text-decoration-none me-3">Gizlilik Politikası</a>
+                <a href="#" class="text-light text-decoration-none me-3">Çerez Politikamız</a>
+                <a href="#" class="text-light text-decoration-none">Cookie Ayarı</a>
+            </div>
+        </div>
+    </footer>
+    
+      
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-…hash…" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>

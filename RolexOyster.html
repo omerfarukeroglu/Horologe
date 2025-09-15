@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolex Oyster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-…hash…" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"> 
+    <style>
+        .navbar {
+            padding: 0.5rem 0;
+            background-color: #284b63 !important;
+            transition: all 0.3s ease-in-out;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-scrolled {
+            padding: 0.2rem 0;
+            background-color: rgba(109, 70, 107, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar-brand {
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-scrolled .navbar-brand img {
+            height: 45px;
+        }
+        
+        /* Navbar menü öğeleri */
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 15px;
+            padding: 10px 15px !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        
+        
+        .navbar-buttons .btn {
+            margin: 0 5px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+        }
+        .fs-xl {
+        font-size: 3rem; /* 48px */
+        }
+        .main-content {
+        margin-top: 80px; /* Navbar yüksekliği kadar boşluk bırakır */
+        }
+
+        .fs-xxl {
+        font-size: 4rem; /* 64px */
+        }
+        .fs-xxxl {
+        font-size: 5rem; /* 64px */
+        }
+        .no-gap {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        #special-img {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+            transition: transform 0.3s ease;
+        }
+
+        #special-img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            color: #000000;
+            border-bottom: 3px solid #00663a;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #000000;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid #00663a;
+            padding-left: 15px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 20px;
+            text-indent: 30px;
+        }
+        .fw-bold.fs-xxxl {
+            font-size: 5rem; /* varsayılan büyük ekran */
+        }
+
+        /* Büyük ekranlar için örnek */
+        @media (max-width: 1200px) {
+            .fw-bold.fs-xxxl {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .fw-bold.fs-xxxl {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fw-bold.fs-xxxl {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .fw-bold.fs-xxxl {
+                font-size: 2rem;
+                padding: 1rem;
+                word-wrap: break-word; /* Uzun metinleri satır içinde kır */
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/horologewhite.svg" alt="Horologe Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Ana Sayfa</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="brandsDropdown" data-bs-toggle="dropdown">Markalar</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#rolex">Rolex</a></li>
+                            <li><a class="dropdown-item" href="#omega">Omega</a></li>
+                            <li><a class="dropdown-item" href="#seiko">Seiko</a></li>
+                            <li><a class="dropdown-item" href="#blancpain">Blancpain</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#collections">Koleksiyonlar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" style="margin-top: 76px; background: linear-gradient(90deg, #004225 0%, #00663a 100%);">
+
+        <div class="fw-bold fs-xxxl text-center p-3 mb-5 text-light">Rolex Oyster 1926</div>
+
+        <div class="container-fluid shadow rounded-4" style="background-color:#A37E2C;">
+
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 g-5">
+                    <div class="col text-center" id="special-img">
+                        <img class="img-fluid"  src="img/PageItems/RolexOysterShadow.png" alt="Rolex Oyster Fotoğraf">
+                        
+                    </div>
+
+                    <div class="col align-self-center">
+                    <h1>Rolex Oyster 1926: Dünyanın İlk Su Geçirmez Saati</h1>
+                        <p> Rolex Oyster, saat dünyasında bir dönüm noktasıdır. 1926 yılında piyasaya sürülen ilk Oyster modeli, sadece zamanı göstermekle kalmayıp saatçilik tarihinde devrim niteliğinde bir yeniliğe imza atmıştır. O dönemde saatler hâlâ hassas mekanizmalarla çalışıyor, ancak çevresel faktörlerden (su, toz, nem) ciddi şekilde etkileniyordu. Rolex, bu sorunları çözerek, saatleri sadece bir zaman ölçer olmaktan çıkarıp dayanıklı ve güvenilir mühendislik harikaları hâline getirdi.</p>
+                    <h2>Bir Mühendislik Harikası: Oyster Kasa</h2>
+                        <p>Rolex Oyster’ın en dikkat çekici özelliği, adını da aldığı “Oyster” (İstiridye) kasasıdır. Bu kasa, saatçilikte bir ilk olarak tamamen kapalı bir yapıya sahipti. Vidali arka kapak, vidalı çerçeve ve kurma kolu sayesinde kasa, su ve toza karşı tam bir sızdırmazlık sağlıyordu. O dönemde benzer bir teknolojiyi sunan başka bir saat bulunmuyordu. Bu yenilik, Rolex’i rakiplerinden ayıran en önemli özelliklerden biri haline geldi.
+                        Oyster kasası, yalnızca teknik bir başarı değil, aynı zamanda saat tasarımında da estetik bir devrimdir. Rolex mühendisleri, dayanıklılığı artırırken saatin zarif ve şık görünümünden ödün vermemiştir. Bu, Rolex’in hem mühendislik hem de tasarım konusundaki vizyonunu ortaya koyar.</p>
+                    <h2>Oyster Koleksiyonunun Doğuşu</h2>
+                        <p>1926 Oyster, sadece bir model olarak kalmadı; aynı zamanda ikonik Oyster koleksiyonunun temelini attı. Bu koleksiyon, Rolex’in su geçirmez kasasını temel alarak şekillendi ve yıllar içinde Submariner, Datejust, Day-Date ve Explorer gibi efsanevi modellere ilham verdi. Oyster teknolojisi, Rolex saatlerini sadece şık aksesuarlar olmaktan çıkarıp, macera ve keşif saatleri hâline getirdi.
+                        Bu saatler, su geçirmezlik özelliğinin ötesinde dayanıklılıkları, hassas mekanizmaları ve işlevsellikleriyle de öne çıktı. Profesyonel dalgıçlar, dağcılar, sporcular ve hatta askerler için Oyster saatleri, güvenilir bir araç haline geldi. Rolex, bu koleksiyon sayesinde lüks ve fonksiyonelliği aynı çatı altında buluşturmayı başardı.</p>
+                        
+                    </div><!--*yazı column end -->
+
+                </div><!-- *row1 end -->
+
+                <div class="row row-cols-1 row-cols-lg-2 g-5">
+                    <div class="col text-center" id="special-img">
+                        <img class="img-fluid rounded-5 border border-2 border-light mt-3" src="img/PageItems/Mercedes-Gleitzes.png" alt="">
+                    </div>
+                    <div class="col align-self-center">
+                        <h2>Tarihe Geçen Deney: Mercedes Gleitze ve Manş Denizi</h2>
+                        <p>Rolex, Oyster’ın su geçirmezliğini sadece sözde bırakmak istemedi. 1927 yılında İngiliz yüzücü Mercedes Gleitze, Manş Denizi’ni geçmeye çalışırken bileğine bir Rolex Oyster taktı. Bu zorlu yolculuk yaklaşık 10 saat sürdü ve deniz suyu, güçlü akıntılar ve sert hava koşulları saati test etti. Gleitze karaya çıktığında, saat hâlâ sorunsuz çalışıyor ve zamanı doğru gösteriyordu. Bu olay, Rolex Oyster’ın dayanıklılığını ve su geçirmezliğini tüm dünyaya kanıtladı ve markanın itibarını ciddi şekilde artırdı.
+                        Rolex, bu başarıyı etkileyici bir pazarlama kampanyasına dönüştürdü. Mercedes Gleitze’nin yüzüşünü dünya basınına duyurarak, Oyster modelinin teknik üstünlüğünü ve güvenilirliğini herkese göstermiş oldu. Bu strateji, Rolex’in hem yenilikçi hem de cesur bir marka olarak konumlanmasını sağladı.</p>
+                    <h2>Rolex Oyster: Teknik Mükemmellik ve Kültürel Miras</h2>
+                    <p>Rolex Oyster 1926, sadece bir saat olmanın ötesinde, modern saatçiliğin başlangıcını simgeleyen bir inovasyondur. Tarihi bir başarı öyküsü ve teknik mükemmelliği bir araya getirerek, saat koleksiyonerleri ve meraklıları için eşsiz bir öneme sahiptir.
+                        Aynı zamanda Oyster, Rolex’in markalaşma stratejisinin de temelini oluşturdu. Yenilikçi mühendislik çözümleri, cesur testler ve etkileyici pazarlama kampanyaları, Rolex’in dünya çapında bir ikon hâline gelmesini sağladı. Bugün Rolex Oyster, sadece bir saat değil, aynı zamanda dayanıklılığın, tasarımın ve zamanın ötesine geçen bir mühendislik vizyonunun sembolüdür.</p>
+                    </div>
+                </div>
+            </div><!-- *container end -->
+        </div>
+        <br>
+    </div>
+     <footer class="text-light py-3" style="background-color: #284b63;">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <span>&copy; 2025 Horologe Tüm Hakları Saklıdır.</span>
+            <div class="mt-2 mt-md-0">
+                <a href="#" class="text-light text-decoration-none me-3">İletişim</a>
+                <a href="#" class="text-light text-decoration-none me-3">Kullanım Şartları</a>
+                <a href="#" class="text-light text-decoration-none me-3">Gizlilik Politikası</a>
+                <a href="#" class="text-light text-decoration-none me-3">Çerez Politikamız</a>
+                <a href="#" class="text-light text-decoration-none">Cookie Ayarı</a>
+            </div>
+        </div>
+    </footer>
+    
+      
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-…hash…" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
